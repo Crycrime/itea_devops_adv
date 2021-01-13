@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    links:
+      - db:mysql
+    ports:
+      - "8000:80"
+    working_dir: /var/www/html
+    volumes:
+      - "/home/crycrime/Desktop/devops_adv/les_02/opt/wp-content:/var/www/html/wp-content"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+
+  db:
+    image: mysql:latest
+    restart: always
+    volumes:
+      - "/home/crycrime/Desktop/devops_adv/les_02/opt/mysql:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
