@@ -1,5 +1,0 @@
-*.bak
-.*
-!.gitignore
-*.tfstate
-*.tfstate.*
