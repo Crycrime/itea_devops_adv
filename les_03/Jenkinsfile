@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "crycrime/devops_adv"
+    registry = "crycrime/devops_adv/les_03"
     registryCredential = 'dockerhub_credentials'
     dockerImage = ''
   }
@@ -14,7 +14,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build registry/les_03 + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
     }
