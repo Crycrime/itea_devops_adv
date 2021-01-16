@@ -14,11 +14,11 @@ pipeline {
     }
     stage('Building image') {
       steps{
-        dir("MySolution")
+        dir("les03")
 {
     script
     {
-        docker.build("MyProject", "-f ./les_03/Dockerfile .")
+        docker.build("", "-f ./les_03/Dockerfile .")
     }
 }
         script {
