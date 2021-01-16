@@ -13,13 +13,10 @@ pipeline {
             checkout scm
         }
     }
-    dockerfile {
-                dir 'devops_adv/les_03/'
-              }
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build ("dev:ops", "-f /devops_adv/les_03/ .")
         }
       }
     }
