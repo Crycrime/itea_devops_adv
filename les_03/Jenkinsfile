@@ -14,15 +14,8 @@ pipeline {
     }
     stage('Building image') {
       steps{
-        dir("les03")
-{
-    script
-    {
-        docker.build("", "-f ./les_03/Dockerfile .")
-    }
-}
         script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build ("-f ./les_03/Dockerfile .", "registry + ":$BUILD_NUMBER"")
         }
       }
     }
