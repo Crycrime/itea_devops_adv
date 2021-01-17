@@ -16,7 +16,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build ("dev:ops", "-f /devops_adv_master/les_03/Dockerfile . ") 
+          dockerImage = docker.build ("dev:ops", "-f /les_03/ . ") 
         }
       }
     }
