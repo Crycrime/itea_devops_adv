@@ -6,7 +6,7 @@ pipeline {
   }
 
   agent any
-  
+
   stages {
     stage('Checkout code') {
         steps {
@@ -16,7 +16,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build ("dev:ops", "-f /devops_adv/les_03/ .")
+          dockerImage = docker.build ("dev:ops", "-f /devops_adv/les_03/Dockerfile")
         }
       }
     }
