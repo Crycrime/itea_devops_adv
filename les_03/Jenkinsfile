@@ -16,7 +16,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build ("dev:ops", "-f ./les_03/Dockerfile .")
+          dockerImage = docker.build registry + ":$BUILD_NUMBER" ("dev:ops", "-f ./les_03/Dockerfile .")
         }
       }
     }
