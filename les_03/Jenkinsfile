@@ -6,7 +6,10 @@ pipeline {
   }
 
   agent any
-
+  dockerfile {
+        filename 'Dockerfile'
+        dir 'les_03'
+      }
   stages {
     stage('Checkout code') {
         steps {
