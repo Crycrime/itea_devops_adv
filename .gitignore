@@ -4,4 +4,4 @@
 *.tfstate
 *.tfstate.*
 /travis-ci
-/travis-ci/*
+/travis-ci/**
