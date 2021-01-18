@@ -1,0 +1,7 @@
+*.bak
+.*
+!.gitignore
+*.tfstate
+*.tfstate.*
+/travis-ci
+/travis-ci/*
